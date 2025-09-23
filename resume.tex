@@ -12,6 +12,7 @@
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
@@ -22,6 +23,11 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+
+%============================================================================
+% USER INFO - EDIT THESE VARIABLES
+%============================================================================
+\input{contact}
 
 %============================================================================
 % FONT OPTIONS
@@ -45,12 +51,8 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+% Adjust margins to 0.5 inches on all sides
+\usepackage[margin=0.5in]{geometry}
 
 \urlstyle{same}
 \raggedbottom
@@ -112,10 +114,23 @@
 
 %============================================================================
 % HEADER SECTION
-%=========================================================================
 
-\input{contact}
-% End Header Section
+%Comment using " % " any line if not needed
+%============================================================================
+\begin{center}
+    \textbf{\Huge \scshape \MyName} \\ \vspace{1pt}
+    \small \MyPhone\ $|$ 
+    \href{mailto:\MyEmail}{\underline{\MyEmail}} $|$ 
+    \href{https://\MyLinkedIn}{\underline{\MyLinkedIn}} $|$
+    \href{https://\MyGitHub}{\underline{\MyGitHub}} $|$
+    \href{https://\MyPortfolio}{\underline{\MyPortfolio}}
+\end{center}
+
+%============================================================================
+% SUMMARY SECTION
+%============================================================================
+\section{Summary}
+\small{\MySummary}
 
 %============================================================================
 % EDUCATION SECTION
@@ -129,7 +144,6 @@
       {Blinn College}{Bryan, TX}
       {Associate's in Liberal Arts}{Aug. 2014 -- May 2018}
   \resumeSubHeadingListEnd
-% End Education Section
 
 %============================================================================
 % EXPERIENCE SECTION
@@ -177,7 +191,6 @@
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
-% End Experience Section
 
 %============================================================================
 % PROJECTS SECTION
@@ -201,7 +214,6 @@
             \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
-% End Projects Section
 
 %============================================================================
 % TECHNICAL SKILLS SECTION
@@ -215,7 +227,6 @@
      \textbf{Libraries}{: pandas, NumPy, Matplotlib}
     }}
  \end{itemize}
-% End Technical Skills Section
 
 %============================================================================
 % DOCUMENT ENDS
