@@ -1,21 +1,16 @@
-Use with Overleaf only.
+# For Overleaf Use Only
 
-What it is
+## What it is
+- A LaTeX resume template.
 
-- A LaTeX resume source.
+## How to edit
+- Open the project in Overleaf.
+- Edit the `.tex` files directly.
 
-How to edit
+## Files to change
+- `resume.tex` — main content and layout.
+- `contact.tex` — your name, contact info, and summary.
 
-- Open the project in Overleaf and edit the `.tex` files directly.
-
-Where to edit
-
-- `resume.tex` — main document (structure and content).
-- `contact.tex` — contact/header information.
-
-Features
-
-- Separate `contact.tex` for name, contact links, and summary.
-- Easy to Sort section like Summary, Education, Experience, Projects, Technical Skills, and Certifications.
-- Simple custom commands for formatted entries (e.g., `\resumeSubheading`, `\resumeItem`).
-- Uses common LaTeX packages: `geometry`, `titlesec`, `enumitem`, `hyperref`, and `tabularx`.
+## Features
+- Personal info stored in a separate file (`contact.tex`).
+- Sections like **Summary**, **Education**, **Experience**, **Projects**, **Skills**, and **Certifications** are easy to move or re-order.
