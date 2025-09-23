@@ -5,6 +5,9 @@
 % License : MIT
 %------------------------
 
+%============================================================================
+% DOCUMENT SETUP & PACKAGES
+%============================================================================
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -20,8 +23,9 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
+%============================================================================
+% FONT OPTIONS
+%============================================================================
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
@@ -32,7 +36,9 @@
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
 
-
+%============================================================================
+% PAGE FORMATTING
+%============================================================================
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -47,7 +53,6 @@
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -60,8 +65,9 @@
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
+%============================================================================
+% CUSTOM COMMANDS
+%============================================================================
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -99,13 +105,15 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+%============================================================================
+% DOCUMENT BEGINS
+%============================================================================
 \begin{document}
 
-%----------HEADING----------
+%============================================================================
+% HEADER SECTION
+%============================================================================
+% Alternative header format (commented out)
 % \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 %   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
 %   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
@@ -117,9 +125,11 @@
     \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
     \href{https://github.com/...}{\underline{github.com/jake}}
 \end{center}
+% End Header Section
 
-
-%-----------EDUCATION-----------
+%============================================================================
+% EDUCATION SECTION
+%============================================================================
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
@@ -129,9 +139,11 @@
       {Blinn College}{Bryan, TX}
       {Associate's in Liberal Arts}{Aug. 2014 -- May 2018}
   \resumeSubHeadingListEnd
+% End Education Section
 
-
-%-----------EXPERIENCE-----------
+%============================================================================
+% EXPERIENCE SECTION
+%============================================================================
 \section{Experience}
   \resumeSubHeadingListStart
 
@@ -144,7 +156,7 @@
         \resumeItem{Explored ways to visualize GitHub collaboration in a classroom setting}
       \resumeItemListEnd
       
-% -----------Multiple Positions Heading-----------
+% Multiple Positions Heading (commented out example)
 %    \resumeSubSubheading
 %     {Software Engineer I}{Oct 2014 - Sep 2016}
 %     \resumeItemListStart
@@ -152,7 +164,6 @@
 %          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
 %     \resumeItemListEnd
 %    \resumeSubHeadingListEnd
-%-------------------------------------------
 
     \resumeSubheading
       {Information Technology Support Specialist}{Sep. 2018 -- Present}
@@ -176,16 +187,18 @@
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
+% End Experience Section
 
-
-%-----------PROJECTS-----------
+%============================================================================
+% PROJECTS SECTION
+%============================================================================
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
           {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
           \resumeItemListStart
             \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-            \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
+            \resumeItem{Implemented GitHub OAuth to get data from user's repositories}
             \resumeItem{Visualized GitHub data to show collaboration}
             \resumeItem{Used Celery and Redis for asynchronous tasks}
           \resumeItemListEnd
@@ -198,11 +211,11 @@
             \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
+% End Projects Section
 
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
+%============================================================================
+% TECHNICAL SKILLS SECTION
+%============================================================================
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
@@ -212,7 +225,9 @@
      \textbf{Libraries}{: pandas, NumPy, Matplotlib}
     }}
  \end{itemize}
+% End Technical Skills Section
 
-
-%-------------------------------------------
+%============================================================================
+% DOCUMENT ENDS
+%============================================================================
 \end{document}
