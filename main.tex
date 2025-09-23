@@ -1,0 +1,87 @@
+% Resume in LaTeX
+% Author: Jake Gutierrez (adapted)
+% License: MIT
+
+%--- Packages & Setup ---
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%--- Page Formatting ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\pdfgentounicode=1
+
+%--- Commands ---
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{%
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{%
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%--- User Contact Info ---
+\input{data-contact}
+
+%--- User Resume Data ---
+\input{data-resume}
+
+%--- Document Body ---
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape \MyName} \\ \vspace{1pt}
+    \small \MyPhone\ $|$ 
+    \href{mailto:\MyEmail}{\underline{\MyEmail}} $|$ 
+    \href{https://\MyLinkedIn}{\underline{\MyLinkedIn}} $|$
+    %\href{https://\MyGitHub}{\underline{\MyGitHub}} $|$
+    \href{https://\MyPortfolio}{\underline{\MyPortfolio}}
+\end{center}
+
+%--- Sections ---
+\MySummary
+\EducationSection
+\ExperienceSection
+\ProjectsSection
+\SkillsSection
+\CertificationsSection
+
+\end{document}
