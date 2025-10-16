@@ -1,96 +1,163 @@
-# ATS-Friendly Resume Template
+# ATS-Friendly LaTeX Resume Template
 
-A clean, professional LaTeX resume template optimized for Applicant Tracking Systems (ATS).
+A clean, professional resume template optimized for Applicant Tracking Systems.
 
-## Preview
-
-**[📄 Click here to view Sample Resume PDF](Sample.pdf)**
+## 📄 [View Sample Resume](Sample.pdf)
 
 ---
 
-## Features
+## Why Use This Template?
 
-- ✅ **ATS-Compatible** - Machine-readable, properly formatted for automated parsing
-- ✅ **One-Page Format** - Optimized spacing to fit all content on a single page
-- ✅ **Professional Design** - Times New Roman, 11pt, 0.5" margins
-- ✅ **Easy to Edit** - Separated content from formatting for simple updates
-- ✅ **Flexible Sections** - Reorder or hide sections as needed
+✅ **ATS-Compatible** - Machine-readable format that passes automated screening  
+✅ **One-Page Layout** - Professional spacing, fits everything on one page  
+✅ **Easy to Edit** - Content separated from formatting  
+✅ **Privacy-Friendly** - Contact info stored separately  
+✅ **Flexible** - Reorder or hide sections as needed
 
-## Files
-
-- **`data-contact.tex`** - Your personal contact information
-- **`data-resume.tex`** - Your resume content (education, experience, projects, skills, certifications)
-- **`main.tex`** - Document formatting (do not edit unless changing styles)
+---
 
 ## Quick Start
 
-1. **Edit your contact info** in `data-contact.tex`
-2. **Edit your resume content** in `data-resume.tex`
-3. **Compile** `main.tex` to generate your PDF
+### 1. Edit Your Information
 
-## Customization
-
-### Hide a contact field
-Leave it blank in `data-contact.tex`:
+**Contact Info** → Edit `data-contact.tex`
 ```latex
-\newcommand{\MyGitHub}{}
+\newcommand{\MyName}{Your Name}
+\newcommand{\MyEmail}{your.email@example.com}
+\newcommand{\MyPhone}{+1-234-567-8900}
 ```
 
-### Reorder sections
-Change the order in `data-resume.tex` under "SECTION ORDER":
+**Resume Content** → Edit `data-resume.tex`
+- Education
+- Experience  
+- Projects
+- Skills
+- Certifications
+
+### 2. Compile
+```bash
+pdflatex main.tex
+```
+Or upload to [Overleaf](https://www.overleaf.com) for online editing.
+
+---
+
+## File Structure
+
+| File | Purpose | Edit? |
+|------|---------|-------|
+| `data-contact.tex` | Contact information (name, email, phone, links) | ✅ Yes |
+| `data-resume.tex` | Resume content (all sections) | ✅ Yes |
+| `main.tex` | Formatting & styling | ❌ No (unless changing design) |
+
+---
+
+## Common Customizations
+
+### Hide a Contact Field
+Leave it blank:
+```latex
+\newcommand{\MyGitHub}{}  % GitHub won't appear
+```
+
+### Reorder Sections
+Edit at bottom of `data-resume.tex`:
 ```latex
 \newcommand{\resumeContent}{
+  \experienceSection      % Put experience first
   \skillsSection
-  \experienceSection
-  \educationSection
   \projectsSection
-  \certificationsSection
+  \educationSection
 }
 ```
 
-### Hide a section
+### Hide a Section
 Comment it out with `%`:
 ```latex
 \newcommand{\resumeContent}{
   \educationSection
   \experienceSection
-  % \certificationsSection  <- This section won't appear
+  % \certificationsSection  % Hidden
 }
 ```
+
+---
+
+## Syntax Quick Reference
+
+### Dates
+Always use double dash:
+```latex
+✅ June 2020 -- Present
+❌ June 2020 - Present
+```
+
+### Special Characters
+Must be escaped:
+```latex
+& → \&    % → \%    $ → \$    # → \#    _ → \_
+```
+
+### Adding Experience
+```latex
+\resumeSubheading
+  {Job Title}{Start Date -- End Date}
+  {Company Name}{City, State}
+  \resumeItemListStart
+    \resumeItem{Achievement with metrics and impact}
+    \resumeItem{Another achievement using action verbs}
+  \resumeItemListEnd
+```
+
+### Adding Projects
+```latex
+\resumeProjectHeading
+  {\textbf{Project Name} $|$ \emph{Tech Stack}}{Date Range}
+  \resumeItemListStart
+    \resumeItem{What you built and its impact}
+  \resumeItemListEnd
+```
+
+### Skills Section
+```latex
+\textbf{Category}{: skill1, skill2, skill3} \\
+\textbf{Another}{: more skills}  % Last line: no \\
+```
+
+---
 
 ## Requirements
 
 - LaTeX distribution (TeX Live, MiKTeX, or Overleaf)
-- FontAwesome5 package (for icons)
+- FontAwesome5 package (for contact icons)
 
-## Compilation
+---
 
-```bash
-pdflatex main.tex
-```
+## Tips for Best Results
 
-Or use Overleaf for online editing.
+**Writing Strong Bullets:**
+- Start with action verbs (Developed, Built, Optimized, Led)
+- Include metrics (50% faster, 1M+ users, $100K saved)
+- Be specific with technologies (React, PostgreSQL, AWS)
+- Keep bullets 1-2 lines max
 
-## Template Structure
+**ATS Optimization:**
+- Use standard section names (Education, Experience, Skills)
+- Include keywords from job descriptions
+- Use exact technology names (JavaScript not JS)
+- Keep formatting simple (no images or complex tables)
 
-**Education & Experience entries:**
-```latex
-\resumeSubheading
-  {Position/Degree}{Location}
-  {Company/Institution}{Date Range}
-```
+---
 
-**Project entries:**
-```latex
-\resumeProjectHeading
-  {\textbf{Project Name} $|$ \emph{Technologies}}{Date Range}
-```
+## Need Help?
 
-**Certification entries:**
-```latex
-\resumeCertItem{Certification Name}{Date}
-```
+**For AI-assisted editing:** See `AI-EDITING-GUIDE.md`  
+**For detailed instructions:** Check comments in each `.tex` file
+
+---
 
 ## License
 
-MIT License - Based on Jake Gutierrez's resume template
+MIT License - Free to use and modify
+
+**Credit:** Based on Jake Gutierrez's resume template
