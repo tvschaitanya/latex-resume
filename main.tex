@@ -43,14 +43,14 @@
 % CUSTOM COMMANDS - Formatting structure (do not edit)
 %============================================================================
 
-\newcommand{\ifnotempty}[2]{\ifx&#1&\else#2\fi}
+\usepackage{xstring}
 
 \newcommand{\contactItem}[3]{%
-  \ifnotempty{#3}{#1~\href{#2}{\underline{#3}} \hspace{8pt}}%
+  \IfStrEq{#3}{}{}{\hspace{4pt}#1~\href{#2}{\underline{#3}}}%
 }
 
 \newcommand{\contactItemNoLink}[2]{%
-  \ifnotempty{#2}{#1~#2 \hspace{8pt}}%
+  \IfStrEq{#2}{}{}{#1~#2}%
 }
 
 \newcommand{\resumeItem}[1]{
