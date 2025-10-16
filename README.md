@@ -2,6 +2,12 @@
 
 A clean, professional LaTeX resume template optimized for Applicant Tracking Systems (ATS).
 
+## Preview
+
+![Resume Preview](Sample.pdf)
+
+[📄 View Sample PDF](Sample.pdf)
+
 ## Features
 
 - ✅ **ATS-Compatible** - Machine-readable, properly formatted for automated parsing
