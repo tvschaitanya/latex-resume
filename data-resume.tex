@@ -1,6 +1,16 @@
 % Resume Content Data
 % Edit the content of each section below
 
+%----------- SUMMARY SECTION -----------
+\newcommand{\summarySection}{
+  \section{Summary}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      Results-driven Computer Science graduate with hands-on experience in full-stack development and research. Proficient in building scalable web applications using modern frameworks including React, Flask, and FastAPI. Experienced in cloud technologies and containerization with multiple industry certifications. Demonstrated ability to deliver production-ready solutions and contribute to research projects while maintaining technical infrastructure across campus environments.
+    }}
+  \end{itemize}
+}
+
 %----------- EDUCATION SECTION -----------
 \newcommand{\educationSection}{
   \section{Education}
@@ -102,16 +112,12 @@
 % Change the order of sections by reordering these commands
 % Comment out any section you don't want to include
 \newcommand{\resumeContent}{
+  \summarySection
   \educationSection
   \experienceSection
   \projectsSection
   \skillsSection
   \certificationsSection
   
-  % To change order, simply rearrange the commands above, for example:
-  % \skillsSection
-  % \experienceSection
-  % \projectsSection
-  % \educationSection
-  % \certificationsSection
+  % To change order, simply rearrange the commands above.
 }
