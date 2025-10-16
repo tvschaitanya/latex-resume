@@ -1,5 +1,5 @@
 % Resume in LaTeX
-% Author: Jake Gutierrez (adapted)
+% Author: Adapted from Jake Gutierrez
 % License: MIT
 
 %--- Packages & Setup ---
@@ -16,6 +16,12 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{etoolbox} % Reliable empty checks
+
+%--- Helper macro to check if argument is empty ---
+\newcommand{\ifnotempty}[2]{\ifdefvoid{#1}{}{#2}}
+
 \input{glyphtounicode}
 
 %--- Page Formatting ---
@@ -31,7 +37,7 @@
 \titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 \pdfgentounicode=1
 
-%--- Commands ---
+%--- Resume Section Commands ---
 \newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
 \newcommand{\resumeSubheading}[4]{%
   \vspace{-2pt}\item
@@ -67,16 +73,30 @@
 
 %--- Document Body ---
 \begin{document}
+
 \begin{center}
-    \textbf{\Huge \scshape \MyName} \\ \vspace{1pt}
-    \small \MyPhone\ $|$ 
-    \href{mailto:\MyEmail}{\underline{\MyEmail}} $|$ 
-    \href{https://\MyLinkedIn}{\underline{\MyLinkedIn}} $|$
-    %\href{https://\MyGitHub}{\underline{\MyGitHub}} $|$
-    \href{https://\MyPortfolio}{\underline{\MyPortfolio}}
+    \textbf{\Huge \scshape \MyName} \\
+    \vspace{6pt} % space between name and contacts
+    \small
+    \ifnotempty{\MyPhone}{
+        \faPhone\ \MyPhone\quad
+    }
+    \ifnotempty{\MyEmail}{
+        \faEnvelope\ \href{mailto:\MyEmail}{\underline{\MyEmail}}\quad
+    }
+    \ifnotempty{\MyLinkedIn}{
+        \faLinkedin\ \href{https://\MyLinkedIn}{\underline{\MyLinkedIn}}\quad
+    }
+    \ifnotempty{\MyGitHub}{
+        \faGithub\ \href{https://\MyGitHub}{\underline{\MyGitHub}}\quad
+    }
+    \ifnotempty{\MyPortfolio}{
+        \faGlobe\ \href{https://\MyPortfolio}{\underline{\MyPortfolio}}
+    }
+    \vspace{10pt}
 \end{center}
 
-%--- Sections ---
+%--- Resume Sections ---
 \MySummary
 \SkillsSection
 \ExperienceSection
