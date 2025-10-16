@@ -49,6 +49,64 @@ Or upload to [Overleaf](https://www.overleaf.com) for online editing.
 | `data-contact.tex` | Contact information (name, email, phone, links) | ✅ Yes |
 | `data-resume.tex` | Resume content (all sections) | ✅ Yes |
 | `main.tex` | Formatting & styling | ❌ No (unless changing design) |
+| `AI_EDITING_GUIDE.md` | Instructions for AI assistants | 📖 Reference |
+| `README.md` | This file - user documentation | 📖 Reference |
+
+---
+
+## Using AI Assistance
+
+Want help tailoring your resume for a specific job? AI assistants can help optimize your content!
+
+### What to Share with AI
+
+**Give AI these 3 files:**
+1. ✅ `AI_EDITING_GUIDE.md` - So AI understands the template structure
+2. ✅ `data-resume.tex` - Your current resume content
+3. ✅ **Job Description (JD)** - The job posting you're applying to
+
+**Keep private (don't share with AI):**
+- ❌ `data-contact.tex` - Contains your personal information
+
+### Example Prompt
+
+```
+Hi! I need help tailoring my resume for a specific job. Here are the files:
+
+1. AI_EDITING_GUIDE.md - Please read this first to understand the template structure
+2. data-resume.tex - My current resume content
+3. Job Description:
+   [Paste the full job description here]
+
+Please help me:
+- Optimize my resume for this role
+- Add relevant keywords from the JD
+- Reorder sections if needed
+- Improve bullet points to match job requirements
+- Highlight relevant experience and skills
+```
+
+### What AI Can Help You With
+
+**Content Optimization:**
+- Write strong, ATS-friendly bullet points with action verbs
+- Add quantifiable metrics and impact statements
+- Match keywords from job description naturally
+- Emphasize relevant experience for the target role
+
+**Structure & Strategy:**
+- Reorder sections based on job requirements
+- Highlight most relevant skills first
+- Suggest which experiences to emphasize
+- Recommend what to add or remove
+
+**ATS Optimization:**
+- Include exact technology names from JD
+- Use industry-standard terminology
+- Ensure proper keyword density
+- Maintain clean, parseable formatting
+
+**Note:** The AI_EDITING_GUIDE.md includes privacy protections, so AI assistants won't ask for your contact information.
 
 ---
 
@@ -147,12 +205,30 @@ Must be escaped:
 - Use exact technology names (JavaScript not JS)
 - Keep formatting simple (no images or complex tables)
 
+**Tailoring for Each Job:**
+- Read the JD carefully and identify key requirements
+- Match your experience to their needs
+- Use their terminology and tech stack
+- Reorder sections to highlight relevant experience first
+
+---
+
+## Workflow Example
+
+1. **Save the job description** you're applying to
+2. **Share with AI:** `AI_EDITING_GUIDE.md` + `data-resume.tex` + Job Description
+3. **Get optimized content** tailored to the role
+4. **Update** your `data-resume.tex` with AI suggestions
+5. **Compile** to generate your tailored PDF
+6. **Repeat** for each job application
+
 ---
 
 ## Need Help?
 
-**For AI-assisted editing:** See `AI-EDITING-GUIDE.md`  
-**For detailed instructions:** Check comments in each `.tex` file
+**For AI-assisted editing:** Share `AI_EDITING_GUIDE.md` + `data-resume.tex` + Job Description  
+**For manual editing:** Check comments in each `.tex` file  
+**For customization:** See the "Common Customizations" section above
 
 ---
 
