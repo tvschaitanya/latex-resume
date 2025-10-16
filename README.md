@@ -4,9 +4,9 @@ A clean, professional LaTeX resume template optimized for Applicant Tracking Sys
 
 ## Preview
 
-![Resume Preview](Sample.pdf)
+**[📄 Click here to view Sample Resume PDF](Sample.pdf)**
 
-[📄 View Sample PDF](Sample.pdf)
+---
 
 ## Features
 
