@@ -1,168 +1,248 @@
 # AI Assistant Guide for Resume Editing
 
-This guide helps AI models understand and edit the resume template correctly.
+**Quick Reference:** This is a 3-file LaTeX resume template. You edit **ONLY** `data-resume.tex` by default. Contact info in `data-contact.tex` is private unless user explicitly grants access.
 
-## Template Overview
+---
 
-This is a 3-file LaTeX resume template:
-- `data-contact.tex` - Contact information
-- `data-resume.tex` - Resume content
-- `main.tex` - Formatting (do not modify)
+## PART 1: Template Structure
 
-## File Locations & Purposes
+### The Three Files
 
-### data-contact.tex
-**Purpose:** Store personal contact information  
-**Editable:** YES - Users update this frequently  
-**Variables:**
+**`data-contact.tex`** - PRIVATE (don't access by default)
 ```latex
-\newcommand{\MyName}{Full Name}
-\newcommand{\MyPhone}{Phone Number}
+\newcommand{\MyName}{John Doe}
 \newcommand{\MyEmail}{email@example.com}
+\newcommand{\MyPhone}{+1-555-123-4567}
 \newcommand{\MyLinkedIn}{linkedin.com/in/username}
 \newcommand{\MyGitHub}{github.com/username}
 \newcommand{\MyPortfolio}{website.com}
 ```
 
-### data-resume.tex
-**Purpose:** Store all resume content  
-**Editable:** YES - Main content editing happens here  
-**Sections:** Education, Experience, Projects, Skills, Certifications
+**`data-resume.tex`** - YOUR MAIN EDITING TARGET
+- Contains: Education, Experience, Projects, Skills, Certifications
+- Section order controlled at bottom by `\resumeContent`
 
-### main.tex
-**Purpose:** Formatting and document structure  
-**Editable:** NO - Only edit for style changes
+**`main.tex`** - DON'T EDIT (formatting only)
 
-## AI Editing Instructions
+---
 
-### When user asks to update contact info:
-**Edit:** `data-contact.tex`  
-**Action:** Update the relevant `\newcommand` with new value  
-**Example:**
+## PART 2: LaTeX Syntax Essentials
+
+### Special Characters - MUST ESCAPE
 ```latex
-\newcommand{\MyEmail}{newemail@example.com}
+& → \&     % → \%     $ → \$     # → \#     _ → \_
 ```
 
-### When user asks to add/edit work experience:
-**Edit:** `data-resume.tex`  
-**Location:** Inside `\experienceSection`  
-**Format:**
+### Critical Rules
+1. **Date ranges:** Always use `--` never `-`
+   ```latex
+   ✅ June 2020 -- Present
+   ❌ June 2020 - Present
+   ```
+
+2. **Skills section:** Every line except last needs `\\`
+   ```latex
+   \textbf{Languages}{: Python, Java} \\
+   \textbf{Tools}{: Git, Docker}      (no \\ on last line)
+   ```
+
+3. **Brackets must balance:** Every `{` needs a `}`
+
+---
+
+## PART 3: Section Templates
+
+### Education
+```latex
+\resumeSubheading
+  {University Name}{City, State}
+  {Degree and Major, GPA: 3.8}{Aug. 2018 -- May 2022}
+```
+
+### Experience
 ```latex
 \resumeSubheading
   {Job Title}{Start Date -- End Date}
   {Company Name}{City, State}
   \resumeItemListStart
-    \resumeItem{Achievement or responsibility description}
-    \resumeItem{Another achievement with metrics when possible}
+    \resumeItem{Achievement with action verb and metrics}
+    \resumeItem{Another achievement with impact}
   \resumeItemListEnd
 ```
 
-### When user asks to add/edit education:
-**Edit:** `data-resume.tex`  
-**Location:** Inside `\educationSection`  
-**Format:**
-```latex
-\resumeSubheading
-  {University Name}{City, State}
-  {Degree and Major}{Start Date -- End Date}
-```
-
-### When user asks to add/edit projects:
-**Edit:** `data-resume.tex`  
-**Location:** Inside `\projectsSection`  
-**Format:**
+### Projects
 ```latex
 \resumeProjectHeading
-  {\textbf{Project Name} $|$ \emph{Tech Stack}}{Date Range}
+  {\textbf{Project Name} $|$ \emph{Tech, Stack}}{Date -- Date}
   \resumeItemListStart
-    \resumeItem{Project description and impact}
+    \resumeItem{What you built and impact}
   \resumeItemListEnd
 ```
 
-### When user asks to add/edit certifications:
-**Edit:** `data-resume.tex`  
-**Location:** Inside `\certificationsSection`  
-**Format:**
+### Skills
 ```latex
-\resumeCertItem{Certification Name}{Issue Date}
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+   \textbf{Languages}{: Python, JavaScript, Java} \\
+   \textbf{Frameworks}{: React, Django, Flask} \\
+   \textbf{Tools}{: Git, Docker, AWS}
+  }}
+\end{itemize}
 ```
 
-### When user asks to update skills:
-**Edit:** `data-resume.tex`  
-**Location:** Inside `\skillsSection`  
-**Format:**
+### Certifications
 ```latex
-\textbf{Category}{: skill1, skill2, skill3} \\
+\resumeCertItem{\textbf{Certification Name}}{Issue Date}
 ```
 
-### When user asks to reorder sections:
-**Edit:** `data-resume.tex`  
-**Location:** In `\resumeContent` command at the bottom  
-**Action:** Reorder the section commands
+---
 
-### When user asks to hide a section:
-**Edit:** `data-resume.tex`  
-**Location:** In `\resumeContent` command  
-**Action:** Comment out with `%`
+## PART 4: Resume Writing Rules
 
-## Important LaTeX Syntax Rules
+### The 5 Core Principles
 
-1. **Special characters require escaping:**
-   - `&` → `\&`
-   - `%` → `\%`
-   - `$` → `\$`
-   - `#` → `\#`
+**1. Start with Action Verbs**
+- Developed, Built, Implemented, Optimized, Led, Designed, Architected, Analyzed
 
-2. **Date ranges use double dash:** `--`
-   ```latex
-   Aug. 2020 -- May 2024
-   ```
+**2. Always Quantify**
+```latex
+❌ Improved performance
+✅ Improved performance by 60\%, reducing load time from 5s to 2s
+```
 
-3. **Italics use:** `\emph{text}`
+**3. Show Impact, Not Tasks**
+```latex
+❌ Responsible for writing code
+✅ Developed REST API handling 1M+ daily requests with 99.9\% uptime
+```
 
-4. **Bold uses:** `\textbf{text}`
+**4. Be Specific with Tech**
+```latex
+❌ Built web app
+✅ Built full-stack app using React, Node.js, PostgreSQL, and Docker
+```
 
-5. **Bullet points use:** `\resumeItem{text}`
+**5. Keep Bullets Concise** (1-2 lines max)
 
-## Common User Requests & Responses
+### ATS Optimization Checklist
+- ✅ Use standard section names (Education, Experience, Skills)
+- ✅ Include keywords from job description
+- ✅ List exact technology names (JavaScript not JS)
+- ✅ Use consistent date formats
+- ✅ No images, graphics, or complex tables
 
-**"Add my work experience"**
-→ Edit `data-resume.tex`, add to `\experienceSection`
+---
 
-**"Update my email"**
-→ Edit `data-contact.tex`, change `\MyEmail`
+## PART 5: Common Edits
 
-**"Remove certifications section"**
-→ Edit `data-resume.tex`, comment out `\certificationsSection` in `\resumeContent`
+### Reorder Sections
+Edit bottom of `data-resume.tex`:
+```latex
+\newcommand{\resumeContent}{
+  \experienceSection    % Change order by moving lines
+  \skillsSection
+  \projectsSection
+  \educationSection
+}
+```
 
-**"Put skills section first"**
-→ Edit `data-resume.tex`, move `\skillsSection` to top in `\resumeContent`
+### Hide Section
+Add `%` to comment out:
+```latex
+% \certificationsSection
+```
 
-**"Change font or margins"**
-→ This requires editing `main.tex` (advanced users only)
+### Add Experience Entry
+Insert between `\resumeSubHeadingListStart` and `\resumeSubHeadingListEnd`:
+```latex
+\resumeSubheading
+  {Software Engineer}{Jan. 2023 -- Present}
+  {Tech Corp}{San Francisco, CA}
+  \resumeItemListStart
+    \resumeItem{Led development of microservices handling 2M+ requests daily}
+    \resumeItem{Reduced deployment time by 70\% through CI/CD automation}
+  \resumeItemListEnd
+```
 
-## Validation Checklist
+---
 
-Before returning edited files, verify:
-- [ ] All LaTeX special characters are escaped
-- [ ] Date ranges use `--` not `-`
-- [ ] Brackets `{}` are balanced
-- [ ] Commands are spelled correctly
-- [ ] Spacing and indentation maintained
-- [ ] Only edited the requested file(s)
+## PART 6: Privacy Rules
 
-## Error Prevention
+### Default Behavior
+- ❌ **NEVER access** `data-contact.tex`
+- ❌ **NEVER ask for** email, phone, or personal details
+- ✅ **ONLY edit** `data-resume.tex`
 
-**DON'T:**
-- Mix up the file locations
-- Edit `main.tex` for content changes
-- Forget to escape special characters
-- Use single dash `-` for date ranges
-- Break the LaTeX syntax structure
+### If User Asks About Contact Info
+**Response:**
+> "I don't have access to `data-contact.tex` to protect your privacy. You can update contact info there directly. Need help with resume content instead?"
 
-**DO:**
-- Keep formatting consistent with existing entries
-- Maintain proper indentation
-- Use the exact command names
-- Preserve the structure
-- Test that brackets are balanced
+### Exception: User Explicitly Grants Permission
+Only if user says:
+- "Can you edit my contact file?"
+- "Here's my contact info, please add it"
+- "I give you permission to access data-contact.tex"
+
+**Then:**
+1. Confirm: "Just to confirm, you're giving me permission to access your contact file?"
+2. Wait for "yes"
+3. Proceed with edit
+4. Remind: "Done! I won't access this file again unless you explicitly ask."
+
+---
+
+## PART 7: Quick Validation
+
+Before submitting edits:
+- [ ] Special characters escaped (`&` → `\&`, `%` → `\%`)
+- [ ] Date ranges use `--`
+- [ ] Skills section: all lines except last have `\\`
+- [ ] All brackets balanced
+- [ ] Bullets start with action verbs
+- [ ] Metrics included where possible
+- [ ] Only edited `data-resume.tex` (unless permitted)
+- [ ] No PII in content sections
+
+---
+
+## PART 8: Example Workflow
+
+**User:** "Add my experience at Google"
+
+**AI:**
+"I'll add that to your experience section. To make it strong, I need:
+1. Job title and dates
+2. Key achievements (with metrics if possible)
+3. Technologies you used
+
+This helps me write impactful, ATS-friendly bullets!"
+
+**User provides details**
+
+**AI adds:**
+```latex
+\resumeSubheading
+  {Senior Software Engineer}{June 2021 -- Aug. 2023}
+  {Google}{Mountain View, CA}
+  \resumeItemListStart
+    \resumeItem{Developed scalable backend services using Go and gRPC, handling 10M+ daily requests}
+    \resumeItem{Optimized database queries, reducing latency by 45\% for 5M+ users}
+    \resumeItem{Mentored 3 junior engineers through code reviews and pair programming}
+  \resumeItemListEnd
+```
+
+---
+
+## Summary Card
+
+| Task | File | Action |
+|------|------|--------|
+| Update email/phone | `data-contact.tex` | User edits (you don't access) |
+| Add experience | `data-resume.tex` | Add `\resumeSubheading` block |
+| Add project | `data-resume.tex` | Add `\resumeProjectHeading` block |
+| Update skills | `data-resume.tex` | Edit skill categories |
+| Reorder sections | `data-resume.tex` | Reorder in `\resumeContent` |
+| Change formatting | `main.tex` | Don't edit (unless user requests) |
+
+**Remember:** Your job is to help create strong, ATS-friendly content in `data-resume.tex` while respecting privacy in `data-contact.tex`.
