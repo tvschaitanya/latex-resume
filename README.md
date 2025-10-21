@@ -1,239 +1,82 @@
-# ATS-Friendly LaTeX Resume Template
+# LaTeX Resume Template
 
-A clean, professional resume template optimized for Applicant Tracking Systems.
+## What Is This?
 
-## 📄 [View Sample Resume](Sample.pdf)
+A modular LaTeX resume template that separates your personal information and content into different files. You edit simple text files, and it generates a professional PDF resume.
 
----
+## Why Use This?
 
-## Why Use This Template?
+- **Keep things organized**: Contact info and resume content are in separate files
+- **Easy updates**: Change your content without touching the formatting
+- **ATS-friendly**: Clean, single-column layout that applicant tracking systems can read
+- **Reusable**: Update once, compile anytime you need a new PDF
 
-✅ **ATS-Compatible** - Machine-readable format that passes automated screening  
-✅ **One-Page Layout** - Professional spacing, fits everything on one page  
-✅ **Easy to Edit** - Content separated from formatting  
-✅ **Privacy-Friendly** - Contact info stored separately  
-✅ **Flexible** - Reorder or hide sections as needed
+## How to Use It
 
----
+### Step 1: Upload to Overleaf
 
-## Quick Start
+1. Go to [Overleaf.com](https://www.overleaf.com) and sign up (it's free)
+2. Click "New Project" → "Upload Project"
+3. Upload all the files from this template
+4. Overleaf will open your project
 
-### 1. Edit Your Information
+### Step 2: Edit Your Contact Information
 
-**Contact Info** → Edit `data-contact.tex`
-```latex
-\newcommand{\MyName}{Your Name}
-\newcommand{\MyEmail}{your.email@example.com}
-\newcommand{\MyPhone}{+1-234-567-8900}
-```
+1. Click on `data-contact.tex` in the left sidebar
+2. Replace the example information with yours:
+   - Name, phone, email
+   - LinkedIn, GitHub, portfolio
+3. Leave any field blank `{}` if you don't want to show it
 
-**Resume Content** → Edit `data-resume.tex`
-- Education
-- Experience  
-- Projects
-- Skills
-- Certifications
+### Step 3: Edit Your Resume Content
 
-### 2. Compile
-```bash
-pdflatex main.tex
-```
-Or upload to [Overleaf](https://www.overleaf.com) for online editing.
+1. Click on `data-resume.tex` in the left sidebar
+2. Replace the example content with your own:
+   - Summary
+   - Education
+   - Experience
+   - Projects
+   - Skills
+   - Certifications
+3. Follow the same format as the examples
 
----
+### Step 4: Generate Your PDF
 
-## File Structure
+Click the "Recompile" button in Overleaf. Your resume PDF will appear on the right side. Download it when you're happy with it.
 
-| File | Purpose | Edit? |
-|------|---------|-------|
-| `data-contact.tex` | Contact information (name, email, phone, links) | ✅ Yes |
-| `data-resume.tex` | Resume content (all sections) | ✅ Yes |
-| `main.tex` | Formatting & styling | ❌ No (unless changing design) |
-| `AI_EDITING_GUIDE.md` | Instructions for AI assistants | 📖 Reference |
-| `README.md` | This file - user documentation | 📖 Reference |
+## How to Use the AI Guide
 
----
+The `AI_Guide.md` file teaches AI how to help you write better resume content. It includes:
 
-## Using AI Assistance
-
-Want help tailoring your resume for a specific job? AI assistants can help optimize your content!
-
-### What to Share with AI
-
-**Give AI these 3 files:**
-1. ✅ `AI_EDITING_GUIDE.md` - So AI understands the template structure
-2. ✅ `data-resume.tex` - Your current resume content
-3. ✅ **Job Description (JD)** - The job posting you're applying to
-
-**Keep private (don't share with AI):**
-- ❌ `data-contact.tex` - Contains your personal information
+- **Writing frameworks**: How to structure strong bullet points with action verbs and results
+- **ATS optimization**: Which keywords to include and how to use them naturally
+- **Job tailoring**: How to customize your resume for specific job descriptions
+- **Real examples**: Before/after comparisons showing weak vs strong bullets
 
 ### Example Prompt
 
-```
-Hi! I need help tailoring my resume for a specific job. Here are the files:
+Copy and paste this into your AI chat (like ChatGPT or Claude):
 
-1. AI_EDITING_GUIDE.md - Please read this first to understand the template structure
-2. data-resume.tex - My current resume content
-3. Job Description:
-   [Paste the full job description here]
+```
+I'm updating my resume using a LaTeX template. Here's the job description I'm applying for:
+
+[Paste the job description here]
+
+Here's my current experience section:
+
+[Paste your experience section from data-resume.tex]
 
 Please help me:
-- Optimize my resume for this role
-- Add relevant keywords from the JD
-- Reorder sections if needed
-- Improve bullet points to match job requirements
-- Highlight relevant experience and skills
+1. Rewrite my bullets to match the job description
+2. Add quantifiable results where possible
+3. Include relevant keywords from the job posting
+4. Make sure each bullet follows the format: Action Verb + What I Did + Result
+
+Give me the complete LaTeX code I can paste back into data-resume.tex.
 ```
 
-### What AI Can Help You With
+**Pro tip**: If you want even better results, upload the `AI_Guide.md` file to your AI chat along with your prompt. This gives the AI detailed instructions on resume writing best practices, resulting in stronger, more professional content that's tailored to your target job.
 
-**Content Optimization:**
-- Write strong, ATS-friendly bullet points with action verbs
-- Add quantifiable metrics and impact statements
-- Match keywords from job description naturally
-- Emphasize relevant experience for the target role
+## That's It!
 
-**Structure & Strategy:**
-- Reorder sections based on job requirements
-- Highlight most relevant skills first
-- Suggest which experiences to emphasize
-- Recommend what to add or remove
-
-**ATS Optimization:**
-- Include exact technology names from JD
-- Use industry-standard terminology
-- Ensure proper keyword density
-- Maintain clean, parseable formatting
-
-**Note:** The AI_EDITING_GUIDE.md includes privacy protections, so AI assistants won't ask for your contact information.
-
----
-
-## Common Customizations
-
-### Hide a Contact Field
-Leave it blank:
-```latex
-\newcommand{\MyGitHub}{}  % GitHub won't appear
-```
-
-### Reorder Sections
-Edit at bottom of `data-resume.tex`:
-```latex
-\newcommand{\resumeContent}{
-  \experienceSection      % Put experience first
-  \skillsSection
-  \projectsSection
-  \educationSection
-}
-```
-
-### Hide a Section
-Comment it out with `%`:
-```latex
-\newcommand{\resumeContent}{
-  \educationSection
-  \experienceSection
-  % \certificationsSection  % Hidden
-}
-```
-
----
-
-## Syntax Quick Reference
-
-### Dates
-Always use double dash:
-```latex
-✅ June 2020 -- Present
-❌ June 2020 - Present
-```
-
-### Special Characters
-Must be escaped:
-```latex
-& → \&    % → \%    $ → \$    # → \#    _ → \_
-```
-
-### Adding Experience
-```latex
-\resumeSubheading
-  {Job Title}{Start Date -- End Date}
-  {Company Name}{City, State}
-  \resumeItemListStart
-    \resumeItem{Achievement with metrics and impact}
-    \resumeItem{Another achievement using action verbs}
-  \resumeItemListEnd
-```
-
-### Adding Projects
-```latex
-\resumeProjectHeading
-  {\textbf{Project Name} $|$ \emph{Tech Stack}}{Date Range}
-  \resumeItemListStart
-    \resumeItem{What you built and its impact}
-  \resumeItemListEnd
-```
-
-### Skills Section
-```latex
-\textbf{Category}{: skill1, skill2, skill3} \\
-\textbf{Another}{: more skills}  % Last line: no \\
-```
-
----
-
-## Requirements
-
-- LaTeX distribution (TeX Live, MiKTeX, or Overleaf)
-- FontAwesome5 package (for contact icons)
-
----
-
-## Tips for Best Results
-
-**Writing Strong Bullets:**
-- Start with action verbs (Developed, Built, Optimized, Led)
-- Include metrics (50% faster, 1M+ users, $100K saved)
-- Be specific with technologies (React, PostgreSQL, AWS)
-- Keep bullets 1-2 lines max
-
-**ATS Optimization:**
-- Use standard section names (Education, Experience, Skills)
-- Include keywords from job descriptions
-- Use exact technology names (JavaScript not JS)
-- Keep formatting simple (no images or complex tables)
-
-**Tailoring for Each Job:**
-- Read the JD carefully and identify key requirements
-- Match your experience to their needs
-- Use their terminology and tech stack
-- Reorder sections to highlight relevant experience first
-
----
-
-## Workflow Example
-
-1. **Save the job description** you're applying to
-2. **Share with AI:** `AI_EDITING_GUIDE.md` + `data-resume.tex` + Job Description
-3. **Get optimized content** tailored to the role
-4. **Update** your `data-resume.tex` with AI suggestions
-5. **Compile** to generate your tailored PDF
-6. **Repeat** for each job application
-
----
-
-## Need Help?
-
-**For AI-assisted editing:** Share `AI_EDITING_GUIDE.md` + `data-resume.tex` + Job Description  
-**For manual editing:** Check comments in each `.tex` file  
-**For customization:** See the "Common Customizations" section above
-
----
-
-## License
-
-MIT License - Free to use and modify
-
-**Credit:** Based on Jake Gutierrez's resume template
+Edit the two data files, recompile in Overleaf, and download your resume. Use the AI guide to make your content stronger.
