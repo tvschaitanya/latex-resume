@@ -1,7 +1,9 @@
-# 📄 Modular LaTeX Resume
+# Modular LaTeX Resume
 
 A modular LaTeX-based resume system designed for simplicity, flexibility, and AI-assisted editing.  
 It separates content, contact information, and the core template to make updates fast and maintainable.
+
+This project is designed to be used directly in **Overleaf** for PDF compilation and export.
 
 ---
 
@@ -77,12 +79,31 @@ It separates content, contact information, and the core template to make updates
 
 ---
 
-## 🚀 Workflow
+## 🚀 How to Use (Overleaf)
 
-1. Edit or generate content in `data-resume.tex`
-2. Update `data-contact.tex` if needed
-3. Compile using `main.tex`
-4. Optionally use `AI-Guide.md` to improve or regenerate content with AI
+This project is designed to be compiled using **Overleaf**.
+
+### 1. Upload to Overleaf
+- Go to https://www.overleaf.com
+- Create a new project → “Upload Project”
+- Upload all files:
+  - `main.tex`
+  - `data-resume.tex`
+  - `data-contact.tex`
+  - `AI-Guide.md`
+
+---
+
+### 2. Compile the Resume
+- Open `main.tex` in Overleaf
+- Ensure it is set as the **main document**
+- Overleaf will automatically compile the PDF
+
+---
+
+### 3. Export PDF
+- Click **“Download PDF”** in Overleaf
+- Or use **Menu → Download → PDF**
 
 ---
 
@@ -90,10 +111,11 @@ It separates content, contact information, and the core template to make updates
 
 This project is optimized for AI-assisted resume editing.
 
-How to use:
-1. Paste `AI-Guide.md` into an AI tool
+### How to use:
+1. Paste `AI-Guide.md` into an AI tool (ChatGPT, Claude, etc.)
 2. Ask for updates or improvements
 3. Copy the generated `data-resume.tex` back into the project
+4. Recompile in Overleaf
 
 ---
 
@@ -102,3 +124,4 @@ How to use:
 - You generally do not need to modify `main.tex`
 - Prefer commenting out sections instead of deleting them
 - Keep content modular for easier AI and manual updates
+- Overleaf handles all compilation — no local LaTeX setup needed
