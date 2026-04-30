@@ -5,26 +5,26 @@ This is a Modular LaTeX Resume system designed to make editing, updating, and ge
 ## Structure Overview
 
 - **main.tex**
-  - Core file that compiles the resume
-  - Should NOT be edited in most cases
-  - Only modify if there are compilation or structural issues
+    - Core file that compiles the resume
+    - Should **NOT** be edited in most cases
+    - Only modify if there are compilation or structural issues
 
 - **data-resume.tex**
-  - Contains all resume content (experience, education, skills, projects, etc.)
-  - This is the main file users update or regenerate
-  - Sections can be easily reordered or disabled using comments
+    - Contains all resume content (experience, education, skills, projects, etc.)
+    - This is the main file users update or regenerate
+    - Sections can be easily reordered or disabled using comments
 
 - **data-contact.tex**
-  - Stores personal contact information separately
-  - Can be hidden by commenting out the include or sections
-  - Useful for privacy control or different resume versions
+    - Stores personal contact information separately
+    - Can be hidden by commenting out the include or sections
+    - Useful for privacy control or different resume versions
 
 - **AI-Guide.md**
-  - Designed for AI tools like ChatGPT, Claude, etc.
-  - You can paste this file into an AI and ask:
-    - "Update my resume"
-    - "Rewrite experience section"
-    - "Generate optimized ATS version"
+    - Designed for AI tools like ChatGPT, Claude, etc.
+    - You can paste this file into an AI and ask:
+    - *Update my resume*
+    - *Rewrite experience section*
+    - *Generate optimized **ATS** version*
 
   - AI will return a fully formatted, ready-to-paste `data-resume.tex`
 
@@ -32,13 +32,13 @@ This is a Modular LaTeX Resume system designed to make editing, updating, and ge
 
 - Fully modular LaTeX resume system
 - Separation of concerns:
-  - Contact info (data-contact.tex)
-  - Resume content (data-resume.tex)
-  - Core template (main.tex)
+    - Contact info (data-contact.tex)
+    - Resume content (data-resume.tex)
+    - Core template (main.tex)
 
 - Easy section management:
-  - Reorder sections freely
-  - Comment/uncomment to hide or show sections
+    - Reorder sections freely
+    - Comment/uncomment to hide or show sections
 
 - Privacy-friendly:
   - Contact details can be hidden easily
@@ -54,30 +54,25 @@ This is a Modular LaTeX Resume system designed to make editing, updating, and ge
 
 ## Workflow
 
-1. Edit or generate content in `data-resume.tex`
-2. Update contact in `data-contact.tex` if needed
-3. Compile using `main.tex`
-4. Optionally use `AI-Guide.md` to regenerate or improve resume content using AI
+## Edit or generate content in `data-resume.tex`
+
+## Update contact in `data-contact.tex` if needed ## Compile using `main.tex` ## Optionally use `AI-Guide.md` to regenerate or improve resume content using AI
 
 ---
 
 # 📘 README.md (copy-paste ready)
 
-```md
-# LaTeX Resume (Modular System)
+```md # LaTeX Resume (Modular System)
 
 This project is a modular LaTeX-based resume system designed for flexibility, easy editing, and AI-assisted content generation.
 
 ---
 
 ## 📁 Project Structure
+
 ```
 
-.
-├── AI-Guide.md
-├── data-contact.tex
-├── data-resume.tex
-└── main.tex
+. ├── AI-Guide.md ├── data-contact.tex ├── data-resume.tex └── main.tex
 
 ```
 
@@ -86,6 +81,7 @@ This project is a modular LaTeX-based resume system designed for flexibility, ea
 ## 🧩 Components
 
 ### `main.tex`
+
 - Core LaTeX file that compiles the resume
 - Acts as a template/engine
 - ❗ Should not be edited unless necessary
@@ -93,18 +89,20 @@ This project is a modular LaTeX-based resume system designed for flexibility, ea
 ---
 
 ### `data-resume.tex`
+
 - Contains all resume content:
-  - Experience
-  - Education
-  - Skills
-  - Projects
+    - Experience
+    - Education
+    - Skills
+    - Projects
 - Fully modular:
-  - Sections can be reordered
-  - Sections can be hidden using comments
+    - Sections can be reordered
+    - Sections can be hidden using comments
 
 ---
 
 ### `data-contact.tex`
+
 - Stores personal contact information separately
 - Can be easily enabled/disabled via comments
 - Useful for privacy control or multiple resume versions
@@ -112,11 +110,12 @@ This project is a modular LaTeX-based resume system designed for flexibility, ea
 ---
 
 ### `AI-Guide.md`
+
 - Designed for AI tools (ChatGPT, Claude, etc.)
 - Paste into AI and request updates like:
-  - “Improve my resume”
-  - “Rewrite for ATS optimization”
-  - “Add new experience section”
+    - “Improve my resume”
+    - “Rewrite for **ATS** optimization”
+    - “Add new experience section”
 - AI returns ready-to-use `data-resume.tex`
 
 ---
@@ -125,12 +124,12 @@ This project is a modular LaTeX-based resume system designed for flexibility, ea
 
 - Modular LaTeX resume architecture
 - Clean separation of:
-  - Contact info
-  - Resume data
-  - Core template
+    - Contact info
+    - Resume data
+    - Core template
 - Easy customization:
-  - Reorder sections freely
-  - Hide sections via comments
+    - Reorder sections freely
+    - Hide sections via comments
 - Privacy-friendly design
 - AI-assisted resume generation workflow
 - Minimal need to modify `main.tex`
@@ -140,10 +139,9 @@ This project is a modular LaTeX-based resume system designed for flexibility, ea
 
 ## 🚀 Workflow
 
-1. Edit or generate content in `data-resume.tex`
-2. Update `data-contact.tex` if needed
-3. Compile using `main.tex`
-4. Optionally use `AI-Guide.md` to regenerate or improve content using AI
+## Edit or generate content in `data-resume.tex`
+
+## Update `data-contact.tex` if needed ## Compile using `main.tex` ## Optionally use `AI-Guide.md` to regenerate or improve content using AI
 
 ---
 
@@ -170,5 +168,5 @@ You can:
 If you want, I can also:
 
 - add a **Makefile for one-command build**
-- convert this into a **beautiful GitHub README with badges**
+- convert this into a **beautiful GitHub **README** with badges**
 - or design a **professional LaTeX resume template structure upgrade**
